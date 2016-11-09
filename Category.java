@@ -1,11 +1,23 @@
-package com.niit.shoppingcart.model;
+package com.niit.shoppingcartbackend.model;
 
-import org.springframework.stereotype.Controller;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Controller
+import org.springframework.stereotype.Component;
+
+
+@Entity
+@Table(name="Category")
+@Component()
+
 public class Category {
+	@Id
 	private String id;
+	@Column(name="name")
 	private String name;
+	@Column(name="description")
 	private String description;
 	public String getId() {
 		return id;
@@ -27,3 +39,4 @@ public class Category {
 	}
 
 }
+
